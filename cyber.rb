@@ -21,7 +21,7 @@ class Cyber < Formula
     cd bin_path do
       # system "go", "build", "-tags", "netgo ledger", "-ldflags", "-X github.com/cosmos/cosmos-sdk/version.Name=cyber -X github.com/cosmos/cosmos-sdk/version.AppName=cyber -X github.com/cosmos/cosmos-sdk/version.Version=0.3.2-1-g4b368a0 -X github.com/cosmos/cosmos-sdk/version.Commit=4b368a053bcbed034aa7399c036e229607795c40 -X 'github.com/cosmos/cosmos-sdk/version.BuildTags=netgo ledger,' -X github.com/tendermint/tendermint/version.TMCoreSemVer=v0.34.21", "-o", bin/"cyber", "./cmd/cyber"
       # system "make", "install-cli", "BINDIRCLI=#{bin}/"
-      system "make", "build", "BINDIRCLI=#{bin}/cyber"
+      system "make", "build", "BUILDDIR=#{bin}/cyber"
     end
     # system "./configure", *std_configure_args, "--disable-silent-rules"
     # system "cmake", "-S", ".", "-B", "build", *std_cmake_args
