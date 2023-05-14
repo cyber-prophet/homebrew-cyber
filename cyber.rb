@@ -20,7 +20,7 @@ class Cyber < Formula
     bin_path.install Dir["*"]
     cd bin_path do
       # system "go", "install", "-o", bin/"cyber", "./cmd/cyber"
-      system "make", "install-cli", "BINDIRCLI=#{bin}/cyber"
+      system "make", "install-cli", "BINDIRCLI=#{bin}/"
     end
     # system "./configure", *std_configure_args, "--disable-silent-rules"
     # system "cmake", "-S", ".", "-B", "build", *std_cmake_args
