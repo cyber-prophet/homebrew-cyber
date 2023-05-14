@@ -16,7 +16,11 @@ class Cyber < Formula
     # ENV.deparallelize  # if your formula fails when building in parallel
     # Remove unrecognized options if warned by configure
     # https://rubydoc.brew.sh/Formula.html#std_configure_args-instance_method
-    system "go", "build", "-o", bin/"cyber", "./cmd/cyber"
+    bin_path = buildpath/"src/github.com/cyber-prophet/cyber"
+    bin_path.install Dir["*"]
+    cd bin_path do
+      system "go", "build", "-o", bin/"cyber", "./cmd/cyber"
+    end
     # system "make", "install", "SOFTWARE_2_ENABLED=false"
     # system "./configure", *std_configure_args, "--disable-silent-rules"
     # system "cmake", "-S", ".", "-B", "build", *std_cmake_args
