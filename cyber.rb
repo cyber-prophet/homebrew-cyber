@@ -4,8 +4,8 @@
 class Cyber < Formula
   desc ""
   homepage ""
-  url "https://github.com/cyber-prophet/go-cyber-for-brew/archive/refs/tags/v0.3.2.2.tar.gz"
-  sha256 "b909922d36324735b5f09bafdb2c4c32e6b71fdf1eda0318fc3bd61dca97ce0a"
+  url "https://github.com/cyber-prophet/go-cyber-brew/archive/refs/tags/v0.3.2.0.tar.gz"
+  sha256 "e3699d73089cc83e27ac510d9164b4f6edd3549cdcc424052d72d2a2629ef433"
   license ""
 
   depends_on "go" => :build
@@ -24,7 +24,7 @@ class Cyber < Formula
     bin_path.install Dir["*"]
     
     cd bin_path do
-      system "make", "build", "BUILDDIR=#{bin}/"
+      system "make", "build", "BUILDDIR=#{bin}/cyber"
     end
     # system "./configure", *std_configure_args, "--disable-silent-rules"
     # system "cmake", "-S", ".", "-B", "build", *std_cmake_args
