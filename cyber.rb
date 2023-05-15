@@ -12,7 +12,7 @@ class Cyber < Formula
 
   def install
     ENV["GOPATH"] = buildpath
-    ENV["GOMODCACHE"] = etc
+    ENV["GOMODCACHE"] = share
     # ENV["CGO_LDFLAGS"] = libexec
     # libexec.mkdir
     # ENV["CGO_LDFLAGS"] = prefix/"pkg"
