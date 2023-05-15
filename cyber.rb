@@ -4,8 +4,8 @@
 class Cyber < Formula
   desc ""
   homepage ""
-  url "https://github.com/cyber-prophet/go-cyber-for-brew/archive/refs/tags/v0.3.2.2.tar.gz"
-  sha256 "b909922d36324735b5f09bafdb2c4c32e6b71fdf1eda0318fc3bd61dca97ce0a"
+  url "https://github.com/cyber-prophet/go-cyber-brew/archive/refs/tags/v0.3.2.0.tar.gz"
+  sha256 "e3699d73089cc83e27ac510d9164b4f6edd3549cdcc424052d72d2a2629ef433"
   license ""
 
   depends_on "go" => :build
@@ -13,23 +13,13 @@ class Cyber < Formula
   def install
     ENV["GOPATH"] = buildpath
     ENV["GOMODCACHE"] = etc
-    # ENV["CGO_LDFLAGS"] = libexec
-    # libexec.mkdir
-    # ENV["CGO_LDFLAGS"] = prefix/"pkg"
-    
-    # ENV.deparallelize  # if your formula fails when building in parallel
-    # Remove unrecognized options if warned by configure
-    # https://rubydoc.brew.sh/Formula.html#std_configure_args-instance_method
+
     bin_path = buildpath/"src/github.com/cyber-prophet/cyber"
     bin_path.install Dir["*"]
     cd bin_path do
-      # system "go", "build", "-tags", "netgo ledger", "-ldflags", "-X github.com/cosmos/cosmos-sdk/version.Name=cyber -X github.com/cosmos/cosmos-sdk/version.AppName=cyber -X github.com/cosmos/cosmos-sdk/version.Version=0.3.2-1-g4b368a0 -X github.com/cosmos/cosmos-sdk/version.Commit=4b368a053bcbed034aa7399c036e229607795c40 -X 'github.com/cosmos/cosmos-sdk/version.BuildTags=netgo ledger,' -X github.com/tendermint/tendermint/version.TMCoreSemVer=v0.34.21", "-o", bin/"cyber", "./cmd/cyber"
-      # system "make", "install-cli", "BINDIRCLI=#{bin}/"
       system "make", "build", "BUILDDIR=#{bin}/cyber"
-      # system "make", "install"
     end
-    # system "./configure", *std_configure_args, "--disable-silent-rules"
-    # system "cmake", "-S", ".", "-B", "build", *std_cmake_args
+
   end
 
   test do
