@@ -12,8 +12,8 @@ class Cyber < Formula
 
   def install
     ENV["GOPATH"] = buildpath
-    ENV["CGO_LDFLAGS"] = prefix/"pkg"
-    prefix/"pkg".mkpath
+    ENV["CGO_LDFLAGS"] = libexec
+    # ENV["CGO_LDFLAGS"] = prefix/"pkg"
     
     # ENV.deparallelize  # if your formula fails when building in parallel
     # Remove unrecognized options if warned by configure
