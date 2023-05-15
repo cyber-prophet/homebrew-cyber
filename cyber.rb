@@ -18,7 +18,7 @@ class Cyber < Formula
     bin_path.install Dir["*"]
     
     cd bin_path do
-      system "make", "build", "BUILDDIR=#{bin}/"
+      system "make", "build", "BUILDDIR=#{bin}/cyber"
     end
 
   end
