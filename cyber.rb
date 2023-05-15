@@ -16,8 +16,9 @@ class Cyber < Formula
 
     bin_path = buildpath/"src/github.com/cyber-prophet/cyber"
     bin_path.install Dir["*"]
+    
     cd bin_path do
-      system "make", "build", "BINDIR=#{bin}/cyber"
+      system "make", "build", "BUILDDIR=#{bin}/"
     end
 
   end
