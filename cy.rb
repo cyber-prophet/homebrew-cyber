@@ -13,7 +13,7 @@ class Cy < Formula
   depends_on "pussy" 
   depends_on "curl" 
   depends_on "pueue" 
-  depends_on cask: "wezterm" 
+  # depends_on cask: "wezterm" 
 
   def install
     # ENV.deparallelize  # if your formula fails when building in parallel
