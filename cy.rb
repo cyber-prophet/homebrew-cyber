@@ -13,6 +13,14 @@ class Cy < Formula
   depends_on "pussy" 
   depends_on "curl" 
   depends_on "pueue" 
+  
+  on_linux do
+    depends_on "wez/wezterm-linuxbrew/wezterm"
+  end
+
+  # on_macos do 
+  #   depends_on ""
+  # end
   # depends_on cask: "wezterm" 
 
   def install
