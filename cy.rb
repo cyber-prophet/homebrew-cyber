@@ -1,7 +1,7 @@
 # Documentation: https://docs.brew.sh/Formula-Cookbook
 #                https://rubydoc.brew.sh/Formula
 # PLEASE REMOVE ALL GENERATED COMMENTS BEFORE SUBMITTING YOUR PULL REQUEST!
-class cy < Formula
+class Cy < Formula
   desc "Cy - hackers terminal browser of Cyber 🔵 superintelligence blockchains. Nushell based."
   homepage "https://github.com/cyber-prophet/cy/"
   url "https://github.com/cyber-prophet/cy/archive/refs/tags/v0.9.2.1.tar.gz"
