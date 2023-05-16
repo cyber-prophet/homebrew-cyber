@@ -2,8 +2,8 @@
 #                https://rubydoc.brew.sh/Formula
 # PLEASE REMOVE ALL GENERATED COMMENTS BEFORE SUBMITTING YOUR PULL REQUEST!
 class Cyber < Formula
-  desc ""
-  homepage ""
+  desc "Cyber cli (for managing Bostrom consesnsus computer)"
+  homepage "https://github.com/cyber-prophet/go-cyber-brew"
   url "https://github.com/cyber-prophet/go-cyber-brew/archive/refs/tags/v0.3.2.0.tar.gz"
   sha256 "e3699d73089cc83e27ac510d9164b4f6edd3549cdcc424052d72d2a2629ef433"
   license ""
@@ -13,10 +13,11 @@ class Cyber < Formula
   def install
     ENV["GOPATH"] = buildpath
     ENV["GOMODCACHE"] = pkgetc
+
+    # Had an error on linux. Got the solution here:
+    # https://raw.githubusercontent.com/Homebrew/homebrew-core/master/Formula/ethereum.rb
+    # https://github.com/Homebrew/brew/issues/14763
     ENV.O0 if OS.linux?
-    # ENV["CGO_LDFLAGS"] = libexec
-    # libexec.mkdir
-    # ENV["CGO_LDFLAGS"] = prefix/"pkg"
     
     # ENV.deparallelize  # if your formula fails when building in parallel
     # Remove unrecognized options if warned by configure
@@ -27,8 +28,6 @@ class Cyber < Formula
     cd bin_path do
       system "make", "build", "BUILDDIR=#{bin}/cyber"
     end
-    # system "./configure", *std_configure_args, "--disable-silent-rules"
-    # system "cmake", "-S", ".", "-B", "build", *std_cmake_args
   end
 
   test do
@@ -41,6 +40,6 @@ class Cyber < Formula
     #
     # The installed folder is not in the path, so use the entire path to any
     # executables being tested: `system "#{bin}/program", "do", "something"`.
-    system "false"
+    assert_match "exist: true", shell_output("#{bin}/cyber", "query", "rank", "is-exist-any", "QmRX8qYgeZoYM3M5zzQaWEpVFdpin6FvVXvp6RPQK3oufV", "QmXFUupJCSfydJZ85HQHD8tU1L7CZFErbRdMTBxkAmBJaD")
   end
 end
