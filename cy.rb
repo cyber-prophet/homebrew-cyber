@@ -13,6 +13,7 @@ class Cy < Formula
   depends_on "pussy" 
   depends_on "curl" 
   depends_on "pueue" 
+  depends_on "ipfs"
   
   on_linux do
     depends_on "wez/wezterm-linuxbrew/wezterm"
