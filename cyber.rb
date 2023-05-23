@@ -23,9 +23,7 @@ class Cyber < Formula
     # Remove unrecognized options if warned by configure
     # https://rubydoc.brew.sh/Formula.html#std_configure_args-instance_method
     
-    cd bin_path do
-      system "make", "build", "BUILDDIR=#{bin}/cyber"
-    end
+    system "make", "build", "BUILDDIR=#{bin}/cyber"
   end
 
   test do
