@@ -14,10 +14,8 @@ class Cy < Formula
   depends_on "curl" 
   depends_on "pueue" 
   depends_on "ipfs"
+  depends_on "gum"
   
-  on_linux do
-    depends_on "wez/wezterm-linuxbrew/wezterm"
-  end
 
   # on_macos do 
   #   depends_on ""
