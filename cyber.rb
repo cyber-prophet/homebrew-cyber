@@ -22,8 +22,6 @@ class Cyber < Formula
     # ENV.deparallelize  # if your formula fails when building in parallel
     # Remove unrecognized options if warned by configure
     # https://rubydoc.brew.sh/Formula.html#std_configure_args-instance_method
-    bin_path = buildpath/"src/github.com/cyber-prophet/cyber"
-    bin_path.install Dir["*"]
     
     cd bin_path do
       system "make", "build", "BUILDDIR=#{bin}/cyber"
