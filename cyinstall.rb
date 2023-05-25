@@ -1,11 +1,11 @@
 # Documentation: https://docs.brew.sh/Formula-Cookbook
 #                https://rubydoc.brew.sh/Formula
 # PLEASE REMOVE ALL GENERATED COMMENTS BEFORE SUBMITTING YOUR PULL REQUEST!
-class Cy < Formula
-  desc "Cy - hackers terminal browser of Cyber 🔵 superintelligence blockchains. Nushell based."
+class Cyinstall < Formula
+  desc "Cy - the hacker's browser of Cyber 🔵 superintelligence blockchains. Nushell based."
   homepage "https://github.com/cyber-prophet/cy/"
-  url "https://github.com/cyber-prophet/cy/archive/refs/tags/v0.9.2.1.tar.gz"
-  sha256 "523c5d2a337f000c52c16e3e62841889aa20c017e26ecbadc37ce77efe6d70a9"
+  url "https://github.com/cyber-prophet/cy/archive/refs/tags/v0.9.2.2.tar.gz"
+  sha256 "9a5a03195544e4c2e607ccac15e844d0419e73003f81a0c7d7f42c94d608b9f7"
   license "MIT"
 
   depends_on "nushell" 
@@ -31,7 +31,7 @@ class Cy < Formula
     # bin_path = buildpath/"src/github.com/cyber-prophet/cy"
     # bin_path.install Dir["*"]
     
-    bin.install 'brew_scripts/cy'
+    bin.install 'brew_scripts/cy-execute-install'
     # system "nu", "-c", "'cp brew_scripts/cy.sh #{bin}/cy'"
 
     # cd bin_path do
