@@ -31,7 +31,7 @@ class Cyinstall < Formula
     # bin_path = buildpath/"src/github.com/cyber-prophet/cy"
     # bin_path.install Dir["*"]
     
-    bin.install 'brew_scripts/cy-execute-install'
+    bin.install 'kickstart/cy-execute-install'
     # system "nu", "-c", "'cp brew_scripts/cy.sh #{bin}/cy'"
 
     # cd bin_path do
