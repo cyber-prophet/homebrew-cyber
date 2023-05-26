@@ -39,11 +39,6 @@ class Cyinstall < Formula
     # end
   end
 
-  def post_install
-      system "nu", "-c", "'mkdir ~/cy | http get https://raw.githubusercontent.com/cyber-prophet/cy/main/cy.nu | save ~/cy/cy.nu -f'"
-  end
-
-
   test do
     # `test do` will create, run in and delete a temporary directory.
     #
