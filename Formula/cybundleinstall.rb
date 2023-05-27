@@ -4,8 +4,8 @@
 class Cybundleinstall < Formula
   desc "Cy - the hacker's browser of Cyber 🔵 superintelligence blockchains. Nushell based."
   homepage "https://github.com/cyber-prophet/cy/"
-  url "https://raw.githubusercontent.com/cyber-prophet/homebrew-taps/main/releases/cybundleinstall-004.tar.gz"
-  sha256 "ae142fa38d0413895ba7f7c4a1e955256c089c80c257a8d5b98fa998149c9c51"
+  url "https://raw.githubusercontent.com/cyber-prophet/homebrew-taps/main/releases/cybundleinstall-005.tar.gz"
+  sha256 "409827aafe55ac25844374baf87b0ef17a791ebd7ea84fecb94b4b9e46e35a15"
   license "MIT"
 
   # depends_on "nushell" 
