@@ -4,17 +4,17 @@
 class Cyinstall < Formula
   desc "Cy - the hacker's browser of Cyber 🔵 superintelligence blockchains. Nushell based."
   homepage "https://github.com/cyber-prophet/cy/"
-  url "https://github.com/cyber-prophet/cy/archive/refs/tags/v0.9.2.2.tar.gz"
-  sha256 "9a5a03195544e4c2e607ccac15e844d0419e73003f81a0c7d7f42c94d608b9f7"
+  url "https://github.com/cyber-prophet/homebrew-taps/raw/main/releases/cybundle-install-002.tar.gz"
+  sha256 "dcb1a17beca4358d80a2fbb4604cadc8c79b2737237b75d95cbc842ab8d209a3"
   license "MIT"
 
-  depends_on "nushell" 
-  depends_on "cyber" 
-  depends_on "pussy" 
-  depends_on "curl" 
-  depends_on "pueue" 
-  depends_on "ipfs"
-  depends_on "gum"
+  # depends_on "nushell" 
+  # depends_on "cyber" 
+  # depends_on "pussy" 
+  # depends_on "curl" 
+  # depends_on "pueue" 
+  # depends_on "ipfs"
+  # depends_on "gum"
   
 
   # on_macos do 
@@ -31,7 +31,7 @@ class Cyinstall < Formula
     # bin_path = buildpath/"src/github.com/cyber-prophet/cy"
     # bin_path.install Dir["*"]
     
-    bin.install 'kickstart/cy-execute-install'
+    bin.install 'cybundle-install'
     # system "nu", "-c", "'cp brew_scripts/cy.sh #{bin}/cy'"
 
     # cd bin_path do
