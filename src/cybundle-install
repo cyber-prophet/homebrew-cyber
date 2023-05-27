@@ -1,0 +1,55 @@
+#!/bin/bash
+
+S="$(uname -s)"
+
+if [[ "$OS" == "Linux" ]]; then
+  echo "linux"
+  var1="~/.config/nushell"
+  echo "Not it will ask for sudo password to install fuse, that is needed for wezterm"
+  sudo apt-get update
+  sudo apt-get install fuse
+  brew tap wez/wezterm-linuxbrew
+  brew install wezterm
+
+elif [[ "$OS" == "Darwin" ]]; then
+  echo "macos"
+  var1="~/Library/Application Support/nushell/"
+  brew tap wez/wezterm
+  brew install --cask wez/wezterm/wezterm
+else
+  echo "Your system ($OS) is unsupported"
+  exit 0
+fi
+  # var1=$(eval echo "$var1")
+
+brew tap homebrew/cask-fonts
+brew install font-jetbrains-mono-nerd-font  
+brew pin font-jetbrains-mono-nerd-font
+
+# check if the directory exists
+if [ -d ~/cy/ ]; then
+  # move into the directory
+  cd ~/cy/
+  # pull the repository
+  git pull
+else
+  # create the directory
+  mkdir ~/cy/
+  git clone https://github.com/cyber-prophet/cy ~/cy/
+fi
+
+
+
+if [ ! -e $var1 ]; then
+  mkdir -p $var1
+  cp ~/cy/kickstart/config.nu $var1
+  cp ~/cy/kickstart/env.nu $var1
+fi
+
+# need to copy configs to the right place, to open nu with those configs
+# to ensure, that bin files of homebrew are in the path of nushell
+
+nu ~/cy/kickstart/setup-cy.nu 
+
+# output a message to the user
+echo "Cy is installed. Type nu in your terminal, and it will start with cy."
