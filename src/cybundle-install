@@ -1,6 +1,6 @@
 #!/bin/bash
 
-S="$(uname -s)"
+OS="$(uname -s)"
 
 if [[ "$OS" == "Linux" ]]; then
   echo "linux"
