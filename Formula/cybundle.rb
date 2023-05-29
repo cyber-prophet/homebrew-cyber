@@ -1,11 +1,10 @@
 # This bundle is an opinionated set of apps and their configurations that are needed for comfortable functioning of CY. From Cyber-prophet with love.
 
-
 class Cybundle < Formula
-  desc "cy - access Cybergraph from Nushell to query and manage the Bostrom Consensus computer. Your superintelligence (in it's infancy)🔵, open-sourced and decentralized."
+  desc "cy - access Cybergraph🔵 from Nushell. Query and manage the Bostrom Consensus computer. Your decentralized superintelligence."
   homepage "https://github.com/cyber-prophet/cy/"
-  url "https://raw.githubusercontent.com/cyber-prophet/homebrew-taps/main/releases/cybundle-016.tar.gz"
-  sha256 "54526c60711b934d1569c6b03e5905569e43b6499ca9df72c6f9f52c3a783d19"
+  url "https://raw.githubusercontent.com/cyber-prophet/homebrew-taps/main/releases/cybundle-020.tar.gz"
+  sha256 "e21460343504f5bca08ae1169beec9d9c411c5674b1d0d50a96e3d89e8747953"
   license "MIT"
 
   depends_on "nushell" 
