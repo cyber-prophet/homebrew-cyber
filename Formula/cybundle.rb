@@ -3,8 +3,8 @@
 class Cybundle < Formula
   desc "cy - access Cybergraph🔵 from Nushell. Query and manage the Bostrom Consensus computer. Your decentralized superintelligence."
   homepage "https://github.com/cyber-prophet/cy/"
-  url "https://raw.githubusercontent.com/cyber-prophet/homebrew-taps/main/releases/cybundle-021.tar.gz"
-  sha256 "57632da50f6629424fcd21b0811d20f34b11195963b6db962c6f79d386d49897"
+  url "https://raw.githubusercontent.com/cyber-prophet/homebrew-taps/main/releases/cybundle-022.tar.gz"
+  sha256 "11c913d07a29b1e3497eba15bf653856de022d5da02e5f6751228b6e242b999a"
   license "MIT"
 
   depends_on "nushell" 
