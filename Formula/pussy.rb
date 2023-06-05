@@ -26,7 +26,7 @@ class Pussy < Formula
     bin_path.install Dir["*"]
     
     cd bin_path do
-      system "make", "build", "BUILDDIR=#{bin}/pussy"
+      system "make", "build", "BUILDDIR=#{bin}"
     end
   end
 

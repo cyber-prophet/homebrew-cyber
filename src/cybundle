@@ -76,7 +76,10 @@ if [ ! -f ~/.ipfs ]; then
   ipfs init
 fi
 
-brew services start ipfs
+ipfs swarm peers > /dev/null 2>&1
+if [ $? -ne 0 ]; then
+  brew services start ipfs
+fi
 
 # to ensure, that bin files of homebrew are in the path of nushell
 
