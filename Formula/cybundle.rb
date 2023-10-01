@@ -11,8 +11,9 @@ class Cybundle < Formula
   depends_on "cyber" 
   depends_on "pussy" 
   depends_on "curl" 
-  depends_on "pueue" 
+  # depends_on "pueue" 
   depends_on "ipfs"
+  depends_on "rich-cli"
   # depends_on "atuin"
   depends_on "gum"
   
