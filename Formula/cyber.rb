@@ -24,10 +24,13 @@ class Cyber < Formula
     # https://rubydoc.brew.sh/Formula.html#std_configure_args-instance_method
     bin_path = buildpath/"src/github.com/cyber-prophet/cyber"
     bin_path.install Dir["*"]
-    
+
     cd bin_path do
-      system "make", "build", "BUILDDIR=#{bin}/cyber"
-    end
+      if OS.linux?
+        system "make", "build-linux", "BUILDDIR=#{bin}/cyber"
+      else
+        system "make", "build", "BUILDDIR=#{bin}/cyber"
+      end
   end
 
   test do
