@@ -31,6 +31,7 @@ class Cyber < Formula
       else
         system "make", "build", "BUILDDIR=#{bin}/cyber"
       end
+    end
   end
 
   test do
