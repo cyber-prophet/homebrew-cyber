@@ -27,7 +27,7 @@ class Cyber < Formula
 
     cd bin_path do
       if OS.linux?
-        system "make", "build-linux", "BUILDDIR=#{bin}/cyber"
+        system "make", "build", "CUDA_ENABLED=false" , "BUILDDIR=#{bin}/cyber"
       else
         system "make", "build", "BUILDDIR=#{bin}/cyber"
       end
