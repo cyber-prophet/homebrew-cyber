@@ -55,14 +55,6 @@ fi
 compare_files ~/cy/kickstart/config.nu "$var1/config.nu"
 compare_files ~/cy/kickstart/env.nu "$var1/env.nu"
 
-if [ ! -f ~/.ipfs ]; then
-  ipfs init
-fi
-
-ipfs swarm peers > /dev/null 2>&1
-if [ $? -ne 0 ]; then
-  brew services start ipfs
-fi
 
 # to ensure, that bin files of homebrew are in the path of nushell
 
