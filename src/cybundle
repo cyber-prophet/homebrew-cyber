@@ -2,41 +2,6 @@
 set -u
 cd ~
 
-function compare_files() {
-    if [ -f "$2" ]; then
-
-        if ! cmp -s "$1" "$2"; then
-          code --diff "$1" "$2"
-        fi
-
-    else
-        cp -v "$1" "$2"
-    fi
-}
-
-OS="$(uname -s)"
-longOS="$(uname -a)"
-
-if [[ "$OS" == "Linux" ]]; then
-  var1="~/.config/nushell/"
-
-elif [[ "$OS" == "Darwin" ]]; then
-  var1="~/Library/Application Support/nushell/"
-
-else
-  echo "Your system ($OS) is unsupported"
-  exit 0
-fi
-
-if ! type "code" && [[ "$OS" == "Darwin" ]] > /dev/null; then
-  if gum confirm "Install vscode?"; then
-    echo "Installing VSCode via brew"
-    brew install --cask visual-studio-code
-  fi
-fi
-
-var1=$(eval echo "$var1")
-
 # check if the directory exists
 if [ -d ~/cy/ ]; then
   cd ~/cy/
@@ -48,16 +13,9 @@ else
   git clone https://github.com/cyber-prophet/cy ~/cy/
 fi
 
-if [ ! -e "$var1" ]; then
-  mkdir -p "$var1"
-fi
+nu --execute 'source ~/cy/kickstart/setup-cy.nu'
 
-compare_files ~/cy/kickstart/config.nu "$var1/config.nu"
-compare_files ~/cy/kickstart/env.nu "$var1/env.nu"
+echo "Cy💎 nushell module and essetial apps are installed. 
+Type nu in your terminal, and it will start with cy."
 
-
-# to ensure, that bin files of homebrew are in the path of nushell
-
-# nu ~/cy/kickstart/setup-cy.nu
-
-echo "Cy is installed. Type nu in your terminal, and it will start with cy."
+nu
