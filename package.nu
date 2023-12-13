@@ -13,6 +13,8 @@ def make_release [
     let $file_name = ($"releases/($script_name)-($cur_ver).tar.gz" | inspect )
 
     tar -cvzf $"($file_name)" $"src/($script_name)"
+    
+    git add $"src/($script_name)"
 
     let $shasum = (open $file_name | hash sha256 | inspect)
 
