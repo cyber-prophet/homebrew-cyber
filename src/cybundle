@@ -13,6 +13,6 @@ else
   git clone https://github.com/cyber-prophet/cy ~/cy/
 fi
 
-nu --no-config-file --no-std-lib --execute 'if ($nu.config-path | path exists | not $in) {config nu --default | save -r $nu.config-path};
+nu --no-config-file --no-std-lib --commands 'if ($nu.config-path | path exists | not $in) {config nu --default | save -r $nu.config-path};
     if ($nu.env-path | path exists | not $in) {config env --default | save -r $nu.env-path}' # the command to create default config and env
 nu --execute 'source ~/cy/kickstart/setup-cy.nu'
