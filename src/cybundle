@@ -13,4 +13,5 @@ else
   git clone https://github.com/cyber-prophet/cy ~/cy/
 fi
 
-nu ~/cy/kickstart/setup-cy.nu
+nu --execute 'exit' # the command to create default config and env
+nu --execute 'source ~/cy/kickstart/setup-cy.nu'
