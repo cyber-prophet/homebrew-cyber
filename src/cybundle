@@ -1,6 +1,4 @@
 #!/bin/bash
-set -u
-cd ~
 
 # check if the directory exists
 if [ -d ~/cy/ ]; then
@@ -13,5 +11,6 @@ else
   git clone https://github.com/cyber-prophet/cy ~/cy/
 fi
 
-nu --execute 'exit' # the command to create default config and env
+nu --no-config-file --commands 'if not ($nu.config-path | path exists) {config reset --nu --without-backup};
+    if not ($nu.env-path | path exists) {config reset --env --without-backup}'
 nu --execute 'source ~/cy/kickstart/setup-cy.nu'
