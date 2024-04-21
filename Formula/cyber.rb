@@ -3,9 +3,9 @@
 # PLEASE REMOVE ALL GENERATED COMMENTS BEFORE SUBMITTING YOUR PULL REQUEST!
 class Cyber < Formula
   desc "cyber cli (for managing Bostrom consesnsus computer)"
-  homepage "https://github.com/cyber-prophet/go-cyber-brew"
-  url "https://github.com/cyber-prophet/go-cyber-brew/archive/refs/tags/v0.3.2.0.tar.gz"
-  sha256 "e3699d73089cc83e27ac510d9164b4f6edd3549cdcc424052d72d2a2629ef433"
+  homepage "https://github.com/cybercongress/go-cyber"
+  url "https://github.com/cybercongress/go-cyber/archive/refs/tags/v3.0.0.tar.gz"
+  sha256 "f8116fe7eabd59e5a10fbbf35716422863cc5d6b17a461a24ba195121edfb1ea"
   license "MIT"
 
   depends_on "go" => :build
@@ -22,7 +22,7 @@ class Cyber < Formula
     # ENV.deparallelize  # if your formula fails when building in parallel
     # Remove unrecognized options if warned by configure
     # https://rubydoc.brew.sh/Formula.html#std_configure_args-instance_method
-    bin_path = buildpath/"src/github.com/cyber-prophet/cyber"
+    bin_path = buildpath/"src/github.com/cybercongress/cyber"
     bin_path.install Dir["*"]
 
     cd bin_path do
