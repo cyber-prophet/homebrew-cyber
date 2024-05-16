@@ -1,5 +1,8 @@
 #!/bin/bash
 
+rustup-init -y
+. "$HOME/.cargo/env"
+
 # check if the directory exists
 if [ -d ~/cy/ ]; then
   cd ~/cy/
