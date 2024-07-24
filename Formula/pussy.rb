@@ -4,8 +4,8 @@
 class Pussy < Formula
   desc "pussy cli (for managing space-pussy consesnsus computer)"
   homepage "https://github.com/cyber-prophet/space-pussy-brew"
-  url "https://github.com/greatweb/space-pussy/archive/refs/tags/v0.0.3.tar.gz"
-  sha256 "314120c15fa3b556c0441284c8ef272f077e17f5ec0ca3da7144e071b4421db7"
+  url "https://github.com/greatweb/space-pussy/archive/refs/tags/v0.0.3.1.tar.gz"
+  sha256 "dc0ae8af1b6f0e2846fd33583beaf5599a921321f52b8c05ed5594627c8737f1"
   license "MIT"
 
   depends_on "go" => :build
@@ -18,13 +18,13 @@ class Pussy < Formula
     # https://raw.githubusercontent.com/Homebrew/homebrew-core/master/Formula/ethereum.rb
     # https://github.com/Homebrew/brew/issues/14763
     ENV.O0 if OS.linux?
-    
+
     # ENV.deparallelize  # if your formula fails when building in parallel
     # Remove unrecognized options if warned by configure
     # https://rubydoc.brew.sh/Formula.html#std_configure_args-instance_method
-    bin_path = buildpath/"src/github.com/cyber-prophet/pussy"
+    bin_path = buildpath/"src/github.com/greatweb/space-pussy"
     bin_path.install Dir["*"]
-    
+
     cd bin_path do
       system "make", "build", "BUILDDIR=#{bin}"
     end
