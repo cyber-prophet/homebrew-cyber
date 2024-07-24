@@ -5,7 +5,7 @@ class Pussy < Formula
   desc "pussy cli (for managing space-pussy consesnsus computer)"
   homepage "https://github.com/cyber-prophet/space-pussy-brew"
   url "https://github.com/greatweb/space-pussy/archive/refs/tags/v0.0.3.1.tar.gz"
-  sha256 "dc0ae8af1b6f0e2846fd33583beaf5599a921321f52b8c05ed5594627c8737f1"
+  sha256 "ff55890e31b6ea71e5c96f595f3c73b3d2fb54c800d91dbacba7012e427e7e76"
   license "MIT"
 
   depends_on "go" => :build
