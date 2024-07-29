@@ -1,6 +1,6 @@
 #!/bin/bash
 
-rustup-init -y
+rustup -y
 . "$HOME/.cargo/env"
 
 # check if the directory exists
