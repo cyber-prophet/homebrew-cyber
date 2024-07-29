@@ -1,6 +1,6 @@
 #!/bin/bash
 
-rustup -y
+rustup-init -y
 . "$HOME/.cargo/env"
 
 # check if the directory exists
@@ -17,6 +17,7 @@ else
   git checkout separate-modules
 fi
 
-nu --no-config-file --commands 'if not ($nu.config-path | path exists) {config reset --nu --without-backup};
+nu --no-config-file --commands '
+    if not ($nu.config-path | path exists) {config reset --nu --without-backup};
     if not ($nu.env-path | path exists) {config reset --env --without-backup}'
 nu --execute 'source ~/cy/kickstart/setup-cy.nu'
