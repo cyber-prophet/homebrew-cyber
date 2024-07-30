@@ -1,7 +1,15 @@
 #!/bin/bash
 
-rustup-init -y
-. "$HOME/.cargo/env"
+# Check if the ~/.cargo/bin directory is in the PATH
+if ! echo $PATH | grep -q "$HOME/.cargo/bin"; then
+    # Check if the ~/.cargo directory exists
+    if [ ! -d "$HOME/.cargo" ]; then
+        # Execute rustup-init
+        rustup-init -y
+        # Source the environment setup script
+        . "$HOME/.cargo/env"
+    fi
+fi
 
 # check if the directory exists
 if [ -d ~/cy/ ]; then
