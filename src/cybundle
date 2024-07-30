@@ -8,13 +8,11 @@ if [ -d ~/cy/ ]; then
   cd ~/cy/
   git stash
   git pull
-  git checkout separate-modules
   git stash pop
 else
   mkdir ~/cy/
   git clone https://github.com/cyber-prophet/cy ~/cy/
   cd ~/cy
-  git checkout separate-modules
 fi
 
 nu --no-config-file --commands '
