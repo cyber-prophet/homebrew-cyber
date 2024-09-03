@@ -1,5 +1,7 @@
 #!/bin/bash
 
+brew upgrade nushell rustup cybundle
+
 # Check if the ~/.cargo/bin directory is in the PATH
 if ! echo $PATH | grep -q "$HOME/.cargo/bin"; then
     # Check if the ~/.cargo directory exists
