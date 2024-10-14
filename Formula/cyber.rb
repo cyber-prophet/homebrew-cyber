@@ -4,8 +4,8 @@
 class Cyber < Formula
   desc "cyber cli (for managing Bostrom consesnsus computer)"
   homepage "https://github.com/cybercongress/go-cyber"
-  url "https://github.com/cybercongress/go-cyber/archive/refs/tags/v3.0.1.tar.gz"
-  sha256 "8a54c72572f397555f719f79b7e7b61165b4a2c4f2c3bd2bcae166a9b2260d29"
+  url "https://github.com/cybercongress/go-cyber/archive/refs/tags/v4.0.0.tar.gz"
+  sha256 "6b878d2246ab09394b7daabcc520880cd4d819c9ad84769d4fe78de075074947"
   license "MIT"
 
   depends_on "go" => :build
