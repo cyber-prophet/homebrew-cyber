@@ -18,16 +18,12 @@ def make_release [
 
     let $shasum = (open $file_name | hash sha256 | inspect)
 
-    if (gum confirm | complete | get exit_code | $in == 0) {
-        open $"Formula/($script_name).rb"
-        | str replace -r 'sha256 ".*?"' $'sha256 "($shasum)"'
-        | str replace -r $'\d\d\d.tar.gz' $'($cur_ver).tar.gz'
-        | save -f $"Formula/($script_name).rb"
+    open $"Formula/($script_name).rb"
+    | str replace -r 'sha256 ".*?"' $'sha256 "($shasum)"'
+    | str replace -r $'\d\d\d.tar.gz' $'($cur_ver).tar.gz'
+    | save -f $"Formula/($script_name).rb"
 
-        git add $'Formula/($script_name).rb' $file_name
-        git commit -m $'($script_name) ($cur_ver)'
-        git push
-    } else {
-        print 'no release'
-    }
+    git add $'Formula/($script_name).rb' $file_name
+    git commit -m $'($script_name) ($cur_ver)'
+    git push
 }
